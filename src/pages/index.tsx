@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   useEffect(() =>{
-    fetch(`${process.env.API_URL}/services`).then((response) =>response.json()).then(data =>console.log(data))
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/services`).then((response) =>response.json()).then(data =>console.log(data))
   },[])
 
   return (
