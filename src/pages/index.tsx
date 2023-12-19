@@ -14,7 +14,7 @@ export default function Home() {
     // console.log(e)
     e.preventDefault()
     console.log(`Email: ${email}, Password: ${password}`)
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/sign_in?email=${email}&password=${password}`, {method: 'POST'}).then((response) =>response.json()).then(data =>console.log(data))
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/sign_in?email=${email}&password=${password}`, {method: 'POST', credentials: 'include',}).then((response) =>response.json()).then(data =>console.log(data))
     
   }
   return (
