@@ -2,5 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    * {
+      @apply box-border m-0 p-0;
+    }
+    body{
+        font-family: 'Poppins', sans-serif;
+    }
+}
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+h1{
+    font-size: 34px;
+}
+
 
 

@@ -10,6 +10,7 @@ export default function Login() {
   const [password, setPassword] = useState("")
   
   const router = useRouter()
+  // @ts-ignore
   function handleSubmit (e){
     e.preventDefault()
     console.log(`Email: ${email}, Password: ${password}`)
