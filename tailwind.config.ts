@@ -18,6 +18,9 @@ const config: Config = {
       'main-blue': '#1E2DF7',
       'pale-pink': '#F9DEE7',
       'white': '#ffffff',
+      'light-gray': '#A0AEC0',
+      'grey': '#BBBDBF',
+      'base-black': '#1A202C'
     },
     width:{
       'desktop':'1200px'
