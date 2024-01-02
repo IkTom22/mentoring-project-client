@@ -13,18 +13,20 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        'main-blue': '#1E2DF7',
+        'pale-pink': '#F9DEE7',
+        'light-gray': '#A0AEC0',
+        'grey': '#BBBDBF',
+        'base-black': '#1A202C',
+        'pale-purple': '#7884FF',
+        'aqua-blue': '#00B6C8'
+      },
+      width:{
+        'desktop':'1200px'
+      },
     },
-    colors: {
-      'main-blue': '#1E2DF7',
-      'pale-pink': '#F9DEE7',
-      'white': '#ffffff',
-      'light-gray': '#A0AEC0',
-      'grey': '#BBBDBF',
-      'base-black': '#1A202C'
-    },
-    width:{
-      'desktop':'1200px'
-    },
+  
   },
   plugins: [],
 }

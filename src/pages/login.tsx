@@ -2,6 +2,8 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import { useEffect, useState } from 'react'
 import{useRouter} from 'next/router'
+import AkinaIcon from '../../public/images/AkinaIcon.svg'
+import AkinaLogo from '../../public/images/AkinaLogo.svg'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,13 +20,57 @@ export default function Login() {
     
   }
   return (
-    <main>
-      <h1>The Impact Directory</h1>
-      <form className='flex flex-col max-w-4xl gap-2'>
-        <input className='border-2' type="email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
-        <input className='border-2' type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
-        <button onClick={handleSubmit}>Login</button>
-      </form>
+    <main className='w-screeen flex items-center justify-center font-light'>
+      <div 
+        className='w-[384px] h-[645px] flex flex-col items-center justify-center '
+      >
+        <Image 
+          src ={AkinaIcon}
+          alt="Akina Icon"
+          className='mb-6'
+          height={80}
+          width={80}
+        />
+        <div 
+          className='mb-8 w-full'
+          style={{boxShadow: '0px 4px 40px rgba(0, 0, 0, 0.25)'}}
+        >
+          <div 
+            className='w-full py-3 bg-pale-purple text-white flex items-center justify-center'
+          >
+            <h1 className='text-4xl font-semibold leading-[44px]'>Impact Directory</h1>
+          </div>
+          <div className='px-4 py-8 w-full'>
+            <p className='leading-6'>
+              Enter your email address and password to login. Don&#39;t have an account? <span>Get in touch</span>
+            </p>
+            <form className=' w-full flex flex-col items-center max-w-4xl gap-4 pt-8 '>
+              <div>
+                <label htmlFor="email">Your Email Address</label>
+                <input className='border-2' type="email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+              </div>
+              <div>
+                <label htmlFor="password">Your Password</label>
+                <input className='border-2' type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>  
+              </div>
+              <p className='w-full text-aqua-blue text-sm underline font-extralight'>Forgot password?</p>
+              <button 
+                onClick={handleSubmit}
+                className='bg-main-blue w-[175px] text-white uppercase py-2 rounded-full mt-6'
+              >
+                Login</button>
+            </form>
+          </div>
+        </div>
+        <Image 
+          src ={AkinaLogo}
+          alt="Akina Icon"
+          className='mb-6'
+          height={35}
+          width={85}
+        />
+      </div>
+      
     </main>
   )
 }
