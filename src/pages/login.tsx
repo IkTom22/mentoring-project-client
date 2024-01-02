@@ -47,11 +47,11 @@ export default function Login() {
             <form className=' w-full flex flex-col gap-4 pt-8 '>
               <div className='flex flex-col gap-2'>
                 <label htmlFor="email">Your Email Address</label>
-                <input className='border-2 rounded-sm h-10 px-4' type="email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+                <input className='border-2 rounded-sm h-10 px-4 hover:border hover:border-pale-blue' type="email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
               </div>
               <div className='flex flex-col gap-2'>
                 <label htmlFor="password">Your Password</label>
-                <input className='border-2 rounded-sm h-10' type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>  
+                <input className='border-2 rounded-sm h-10 px-4 hover:border hover:border-pale-blue' type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>  
               </div>
               <p className='w-full text-aqua-blue text-sm underline font-extralight'>Forgot password?</p>
               <button 

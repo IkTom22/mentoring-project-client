@@ -20,13 +20,13 @@ const config: Config = {
         'grey': '#BBBDBF',
         'base-black': '#1A202C',
         'pale-purple': '#7884FF',
-        'aqua-blue': '#00B6C8'
+        'aqua-blue': '#00B6C8',
+        'pale-blue': '#A2DEE4'
       },
       width:{
         'desktop':'1200px'
       },
     },
-  
   },
   plugins: [],
 }
