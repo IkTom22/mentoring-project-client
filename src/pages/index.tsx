@@ -1,18 +1,26 @@
 import React, { Fragment } from 'react';
-import Image from 'next/image'
-import DirectoryCard from '@/components/DirectoryCard';
-import { dummyData } from '../../data/dummy';
-
-import { Inter } from 'next/font/google'
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import Select from 'react-select'
-
-
+import DirectoryCard from '@/components/DirectoryCard';
+import { 
+  dummyData, 
+  dummyLocationList, 
+  dummyIndustryCategoryList,
+  dummyImpactAreaList 
+} from '../../data/dummy';
 import HeroImage from '../../public/HeroImage.png'
 
-const inter = Inter({ subsets: ['latin'] })
+const listingNum = dummyData.length
 
 export default function Home() {
+  console.log(listingNum)
+  const reminder = listingNum % 3
+  const displayNum = Math.floor(listingNum/3)
+  let firstCol = reminder !==0  ? displayNum + 1 : displayNum
+  let secondCol = reminder ===2 ? displayNum +1: displayNum 
+  let thirdCol = displayNum
+  console.log(firstCol, secondCol, thirdCol)
   useEffect(() =>{
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/services`, {credentials: 'include',})
     .then((response) =>{
@@ -56,19 +64,34 @@ export default function Home() {
         <div className='flex flex-col gap-4 w-desktop'>
           <input type="text" className='w-[100%] h-16 px-4 py-5'/>
           <div className='flex justify-between h-10'>
-            <select name="Location" id="location" className='w-[330px] px-4 py-2'>
-              <option value=""></option>
-              <option value=""></option>
-            </select>
-            <select name="impact-area" id="impact-area" className='w-[330px] px-4 py-2' aria-label='Impact Area'>
-              <option value="" disabled selected hidden className='text-light-gray'>Impact Area</option>
-              <option value="A">A</option>
-              <option value="B">B</option>
-            </select>
-            <select name="categories" id="categories" className='w-[330px] px-4 py-2'>
-              <option value="c">C</option>
-              <option value="d">D</option>
-            </select>
+            <Select 
+              options={dummyLocationList} 
+              isMulti
+              placeholder="Location..."
+              className='w-[330px] rounded-none'
+              theme={(theme) => ({
+                ...theme,
+                borderRadius: 0,
+              })} />
+              <Select 
+                options={dummyImpactAreaList}
+                isMulti 
+                placeholder="Impact Area..."
+                className='w-[330px] rounded-none'
+                theme={(theme) => ({
+                  ...theme,
+                  borderRadius: 0,
+                })} />
+              <Select 
+                options={dummyIndustryCategoryList}
+                isMulti 
+                placeholder="Industry Category..."
+                className='w-[330px] rounded-none'
+                theme={(theme) => ({
+                  ...theme,
+                  borderRadius: 0,
+                })} />
+
             <div className='uppercase text-white border-2 border-white py-2 px-4'>
               Clear all filters
             </div>
@@ -79,9 +102,9 @@ export default function Home() {
       <section className='w-screen flex justify-center pt-[88px]'>
         <div className='flex justify-between w-desktop'>
           <div className='flex flex-col gap-8'>
-            {dummyData.map(d => {
+            {dummyData.filter((d, index) => index < firstCol ).map(d => {
               return(
-              <Fragment key={d.name}>
+              <Fragment key={d.id}>
                 <DirectoryCard 
                   data={d}
                 />  
@@ -90,7 +113,7 @@ export default function Home() {
 
           </div>
           <div className='flex flex-col gap-8'>
-            {dummyData.map(d => {
+            {dummyData.filter((d, index)=> index >= firstCol   && index < firstCol + secondCol ).map(d => {
               return(
               <Fragment key={d.name}>
                 <DirectoryCard 
@@ -100,7 +123,7 @@ export default function Home() {
             )})}  
           </div>
           <div className='flex flex-col gap-8'>
-            {dummyData.map(d => {
+            {dummyData.filter((d, index)=> index >= firstCol + secondCol  ).map(d => {
               return(
               <Fragment key={d.name}>
                 <DirectoryCard 

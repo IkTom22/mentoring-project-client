@@ -4,11 +4,16 @@ import Link from "next/link";
 
 // @ts-ignore
 export default function DirectoryCard({data}) {
-    const {description, img, alt, name, category, services, impact_area, service_area, href } = data;
+    const {description, img, name, category, services, impact_area, service_area, href } = data;
   return (
   <div className="flex flex-col p-[18px] gap-8 w-[380px] border-grey hover:border-main-blue border-2 card"> 
     <div className="flex gap-4 items-center">
-        <Image src={img} alt={alt} height={90} width={90}/>
+        <Image 
+            src={img} 
+            alt={`${name} image`} 
+            height={90} 
+            width={90}
+        />
         <Link href={href}  target="_blank" className="text-[22px] text-main-blue card_link">{name}</Link>
     </div>
     <div className="flex flex-col gap-2">
