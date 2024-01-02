@@ -20,7 +20,7 @@ export default function Login() {
     
   }
   return (
-    <main className='w-screeen flex items-center justify-center font-light'>
+    <main className='w-screeen h-screen flex items-center justify-center font-light'>
       <div 
         className='w-[384px] h-[645px] flex flex-col items-center justify-center '
       >
@@ -44,19 +44,19 @@ export default function Login() {
             <p className='leading-6'>
               Enter your email address and password to login. Don&#39;t have an account? <span>Get in touch</span>
             </p>
-            <form className=' w-full flex flex-col items-center max-w-4xl gap-4 pt-8 '>
-              <div>
+            <form className=' w-full flex flex-col gap-4 pt-8 '>
+              <div className='flex flex-col gap-2'>
                 <label htmlFor="email">Your Email Address</label>
-                <input className='border-2' type="email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+                <input className='border-2 rounded-sm h-10 px-4' type="email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
               </div>
-              <div>
+              <div className='flex flex-col gap-2'>
                 <label htmlFor="password">Your Password</label>
-                <input className='border-2' type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>  
+                <input className='border-2 rounded-sm h-10' type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>  
               </div>
               <p className='w-full text-aqua-blue text-sm underline font-extralight'>Forgot password?</p>
               <button 
                 onClick={handleSubmit}
-                className='bg-main-blue w-[175px] text-white uppercase py-2 rounded-full mt-6'
+                className='bg-main-blue w-[175px] text-white uppercase py-2 rounded-full mt-6 self-center'
               >
                 Login</button>
             </form>

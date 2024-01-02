@@ -10,6 +10,7 @@ import {
   dummyImpactAreaList 
 } from '../../data/dummy';
 import HeroImage from '../../public/HeroImage.png'
+import Navbar from '@/components/Navbar';
 
 const listingNum = dummyData.length
 
@@ -35,6 +36,8 @@ export default function Home() {
   },[])
  
   return (
+    <>
+    <Navbar/>
     <main className='w-screen '>
       {/* HERO */}
       <section className='w-full py-6 flex items-center justify-center bg-pale-pink'>
@@ -137,6 +140,8 @@ export default function Home() {
       
       
     </main>
+    </>
+    
   )
 }
 
