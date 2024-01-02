@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "e2e": "npx playwright test",
+    "e2e": "npx playwright test --ui",
     "unit": "vitest"
   },
   "dependencies": {

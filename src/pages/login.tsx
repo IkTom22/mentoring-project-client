@@ -53,17 +53,28 @@ export default function Login() {
             </p>
             <form className=' w-full flex flex-col gap-4 pt-8 '>
               <div className='flex flex-col gap-2'>
-                <label htmlFor="email">Your Email Address</label>
-                <input className='border-2 rounded-sm h-10 px-4 hover:border hover:border-pale-blue' type="email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+                <label htmlFor="email" >Your Email Address</label>
+                <input 
+                  className='border-2 rounded-sm h-10 px-4 hover:border hover:border-pale-blue' 
+                  type="email" 
+                  value={email} 
+                  onChange={(e)=>setEmail(e.target.value)}
+                  data-testid="login-input-email"/>
               </div>
               <div className='flex flex-col gap-2'>
                 <label htmlFor="password">Your Password</label>
-                <input className='border-2 rounded-sm h-10 px-4 hover:border hover:border-pale-blue' type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>  
+                <input 
+                  className='border-2 rounded-sm h-10 px-4 hover:border hover:border-pale-blue' 
+                  type="password" 
+                  value={password} 
+                  onChange={(e)=>setPassword(e.target.value)}
+                  data-testid="login-input-password"/>  
               </div>
               <p className='w-full text-aqua-blue text-sm underline font-extralight'>Forgot password?</p>
               <button 
                 onClick={handleSubmit}
                 className='bg-main-blue w-[175px] text-white uppercase py-2 rounded-full mt-6 self-center'
+                data-testid="login-button-submit"
               >
                 Login</button>
             </form>
