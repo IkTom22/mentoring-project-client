@@ -19,9 +19,9 @@ export default function Nav() {
                 <li >Become a buyer</li>
                 <li>Get certified</li>
             </ul>
-            <button className='border-2 border-main-blue text-main-blue p-2 px-4'>
+            <Link href="/login" className='border-2 border-main-blue text-main-blue p-2 px-4 hover:underline'>
                 BUYER LOGIN
-            </button>
+            </Link>
         </div>
       </div>
     </nav>
