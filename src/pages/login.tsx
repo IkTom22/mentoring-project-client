@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import{useRouter} from 'next/router'
 import AkinaIcon from '../../public/images/AkinaIcon.svg'
 import AkinaLogo from '../../public/images/AkinaLogo.svg'
+import { error } from 'console'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +17,13 @@ export default function Login() {
   function handleSubmit (e){
     e.preventDefault()
     console.log(`Email: ${email}, Password: ${password}`)
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/sign_in?email=${email}&password=${password}`, {method: 'POST', credentials: 'include',}).then((response) =>response.json()).then(data => router.push('/'))
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/sign_in?email=${email}&password=${password}`, {method: 'POST', credentials: 'include',})
+    .then((response) =>{
+      if(response.ok){return response.json()}
+      else{ throw new Error('Something went wrong')}
+      })
+    .then(data => router.push('/listings'))
+    .catch(error => console.log(error))
     
   }
   return (
