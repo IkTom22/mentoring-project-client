@@ -12,9 +12,16 @@ test('can login', async ({ page }) => {
     await page.waitForURL('**/listings')
     await expect(page).toHaveURL('http://localhost:3000/listings');
     await expect(page.getByRole('heading', { name: 'Listings' })).toBeVisible();
-
-
     // login-input-email
   });
 
 //   Create sign up test
+test('can signup', async ({page}) => {
+    await page.goto('http://localhost:3000/signup')
+    await page.getByTestId('signup-input-email').fill('signuptest@test.com')
+    await page.getByTestId('signup-input-password').fill('test123')
+    await page.getByTestId('signup-button-submit').click()
+    await page.waitForURL('**/login')
+    await expect(page).toHaveURL('http://localhost:3000/login')
+    await expect(page.getByRole('heading', {name:'Impact Directory'})).toBeVisible();
+})

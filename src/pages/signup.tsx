@@ -37,9 +37,25 @@ export default function Signup() {
     <main>
       <h1>The Impact Directory</h1>
       <form className='flex flex-col max-w-4xl gap-2'>
-        <input className='border-2' type="email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
-        <input className='border-2' type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
-        <button onClick={handleSubmit}>Sign up</button>
+        <input 
+          className='border-2' 
+          type="email" value={email} 
+          onChange={(e)=>setEmail(e.target.value)}
+          data-testid="signup-input-email"
+        />
+        <input 
+          className='border-2' 
+          type="password" 
+          value={password} 
+          onChange={(e)=>setPassword(e.target.value)}
+          data-testid="signup-input-password"
+        />
+        <button 
+          onClick={handleSubmit} 
+          data-testid="signup-button-submit"
+        >
+          Sign up
+        </button>
       </form>
     </main>
   )
