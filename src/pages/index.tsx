@@ -42,14 +42,14 @@ export default function Home() {
       {/* HERO */}
       <section className='w-full py-6 flex items-center justify-center bg-pale-pink'>
         <div className='w-desktop h-[438px] flex items-center justify-between py-7'>
-          <div className='w-[584px] h-[297px] flex flex-col gap-4  py-7 text-main-blue'>
+          <div className='w-1/2 flex flex-col gap-4  py-7 pr-9 text-main-blue'>
             <h1 className='h-12'>The Impact Directory</h1>
-            <p className='text-xl w-[558px] font-light '>Ākina’s Impact Directory is where you can find all of our certified Impact Suppliers. These organisations deliver a range of positive social, environmental, and culturaloutcomes through selling their products and services.</p>
-            <button className='w-[558px] bg-main-blue uppercase px-4 pb-2  pt-3 font-light leading-6 text-white' >
+            <p className='text-xl font-light '>Ākina’s Impact Directory is where you can find all of our certified Impact Suppliers. These organisations deliver a range of positive social, environmental, and culturaloutcomes through selling their products and services.</p>
+            <button className='max-w-[340px] bg-main-blue uppercase px-4 pb-2  pt-3 font-light leading-6 text-white' >
               Learn more about our certification
             </button>
           </div>
-          <div className=' relative w-[584px] h-[437px]'>
+          <div className=' relative w-1/2 h-[437px]'>
             <Image 
               src={HeroImage}
               alt="Akina hero image"
